@@ -12,6 +12,11 @@ function nameValid(){
         $("#namestatus").html("");
         return true;
     }
+    else if(name.endWith(" "))
+    {
+       $("#namestatus").html("Name cannot end with space");
+        return false;
+    }
     else{
         $("#namestatus").html("Only Letters are allowed.");
         return false;
