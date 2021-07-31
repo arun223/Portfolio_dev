@@ -1,6 +1,6 @@
 function nameValid(){
     var name = $("#inputName").val();
-    var reference = /^[-a-zA-Z-()]+(\s+[-a-zA-Z-()]+)*$/;
+    var reference = /^[-a-zA-Z-()]+(/s+[-a-zA-Z-()]+)*$/;
 
     if(name === "")
     {
