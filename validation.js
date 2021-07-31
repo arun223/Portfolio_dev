@@ -7,16 +7,17 @@ function nameValid(){
         $("#namestatus").html("This field cannot be empty.");
         return false;
     }
-    else if(reference.test(name))
-    {
-        $("#namestatus").html("");
-        return true;
-    }
     else if(name.endsWith(" "))
     {
        $("#namestatus").html("Name cannot end with space");
         return false;
     }
+    else if(reference.test(name))
+    {
+        $("#namestatus").html("");
+        return true;
+    }
+    
     else{
         $("#namestatus").html("Only Letters are allowed.");
         return false;
