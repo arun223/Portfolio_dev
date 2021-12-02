@@ -1,15 +1,11 @@
+
 function nameValid(){
     var name = $("#inputName").val();
-    var reference = /^[-a-zA-Z-()]+(/s+[-a-zA-Z-()]+)*$/;
+    var reference = /^[-a-zA-Z-()]+(\s+[-a-zA-Z-()]+)*$/;
 
     if(name === "")
     {
         $("#namestatus").html("This field cannot be empty.");
-        return false;
-    }
-    else if(name.endsWith(" "))
-    {
-       $("#namestatus").html("Name cannot end with space");
         return false;
     }
     else if(reference.test(name))
@@ -17,7 +13,6 @@ function nameValid(){
         $("#namestatus").html("");
         return true;
     }
-    
     else{
         $("#namestatus").html("Only Letters are allowed.");
         return false;
@@ -60,14 +55,10 @@ function phoneValid() {
             $("#phonestatus").html("");
             return true;
         }
-        else if(phone.length<10 )
+        else if(phone.length<10 || phone.length>10)
         {
-            $("#phonestatus").html("Number should not be less than 10 numbers");
+            $("#phonestatus").html("Enter exact 10 numbers");
             return false;
-        }
-        else{
-            $("#phonestatus").html("Number should not be greater than 10 numbers");
-            return false; 
         }
     }
     else{
@@ -106,10 +97,6 @@ function messageValid() {
         $("#messagestatus").html("This field cannot be empty.");
         return false;
     }
-    else if(name.length<10){
-        $("#messagestatus").html("Enter minimum ten letters.");
-        return false;   
-    }
     
     else{
         $("#messagestatus").html("");
@@ -140,8 +127,3 @@ $("#inputPlace").on('keyup',function () {
 $("#inputMessage").on('keyup',function () {
    messageValid();
 })
-
-
-
-
-
